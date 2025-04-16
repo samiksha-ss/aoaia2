@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Chain Multiplication Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Matrix Chain Multiplication Simulation</h1>
+    <div id="input-section">
+        <label for="matrix-dimensions">Enter Matrix Dimensions (space separated):</label>
+        <input type="text" id="matrix-dimensions" placeholder="e.g., 10 30 5 60">
+        <button id="run-simulation">Run Simulation</button>
+    </div>
+    <div id="output-section">
+        <h2>Optimal Parenthesization and Cost</h2>
+        <div id="result"></div>
+        <h3>DP Table</h3>
+        <div id="dp-table"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
