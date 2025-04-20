@@ -8,20 +8,28 @@
 </head>
 <body>
     <h1>Matrix Chain Multiplication Simulation</h1>
+
     <div id="input-section">
         <label for="matrix-dimensions">Enter Matrix Dimensions (space separated):</label>
-        <input type="text" id="matrix-dimensions" placeholder="e.g., 10 30 5 60">
+        <input type="text" id="matrix-dimensions" placeholder="e.g. 2 5 10 3">
+        <br>
         <button id="start-simulation">Start Simulation</button>
         <button id="next-step" style="display: none;">Next Step</button>
+        <button id="reset-simulation" style="display: none;">Reset</button>
     </div>
+
     <div id="output-section">
-        <h2>Optimal Parenthesization and Cost</h2>
-        <div id="result"></div>
+        
         <h3>DP Table</h3>
         <div id="dp-table"></div>
-        <h3>Calculation Log</h3>
-        <div id="calculation-log"></div>
+
+        <h2>Optimal Parenthesization and Cost</h2>
+        <div id="result"></div>
+        
+        <h3>Calculation Explanation</h3>
+        <div id="calculation-log" style="font-size: 1.2rem; margin-top: 20px;"></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

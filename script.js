@@ -1,7 +1,7 @@
 let m, s, dimensions, n;
 let i = 0, j = 0, length = 2, k = 0;
 let processing = false;
-let stepDelay = 1000; // Delay between steps in milliseconds
+let stepDelay = 500; 
 
 document.getElementById('start-simulation').addEventListener('click', function () {
     const input = document.getElementById('matrix-dimensions').value.trim();
@@ -20,12 +20,10 @@ document.getElementById('start-simulation').addEventListener('click', function (
     m = Array.from({ length: n }, () => Array(n).fill(0));
     s = Array.from({ length: n }, () => Array(n).fill(0));
 
-    // Initialize diagonal elements to 0
     for (let i = 0; i < n; i++) {
         m[i][i] = 0;
     }
 
-    // Initialize other elements to Infinity
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
             if (i !== j) m[i][j] = Infinity;
@@ -40,10 +38,9 @@ document.getElementById('start-simulation').addEventListener('click', function (
     document.getElementById('dp-table').innerHTML = renderDPTable(m);
     document.getElementById('result').innerHTML = '';
     document.getElementById('calculation-log').innerHTML = '';
-    document.getElementById('next-step').style.display = 'none'; // Hide next step button
+    document.getElementById('next-step').style.display = 'none'; 
     document.getElementById('reset-simulation').style.display = 'inline-block';
 
-    // Start automatic simulation
     automaticSimulation();
 });
 
@@ -82,9 +79,8 @@ function automaticSimulation() {
 
     if (k < j) {
         const cost = m[i][k] + m[k + 1][j] + dimensions[i] * dimensions[k + 1] * dimensions[j + 1];
-        const logMessage = `Calculating m[${i}][${j}] with k=${k}: ${m[i][k]} + ${m[k + 1][j]} + ${dimensions[i]}*${dimensions[k + 1]}*${dimensions[j + 1]} = ${cost}`;
-        document.getElementById('calculation-log').innerHTML = logMessage; // Update the log
-        console.log(logMessage); // Optional: log to console
+        document.getElementById('calculation-log').innerHTML =
+            `Calculating m[${i}][${j}] with k=${k}: ${m[i][k]} + ${m[k + 1][j]} + ${dimensions[i]}*${dimensions[k + 1]}*${dimensions[j + 1]} = ${cost}`;
 
         if (cost < m[i][j]) {
             m[i][j] = cost;
