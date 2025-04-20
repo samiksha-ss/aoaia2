@@ -82,8 +82,9 @@ function automaticSimulation() {
 
     if (k < j) {
         const cost = m[i][k] + m[k + 1][j] + dimensions[i] * dimensions[k + 1] * dimensions[j + 1];
-        document.getElementById('calculation-log').innerHTML =
-            `Calculating m[${i}][${j}] with k=${k}: ${m[i][k]} + ${m[k + 1][j]} + ${dimensions[i]}*${dimensions[k + 1]}*${dimensions[j + 1]} = ${cost}`;
+        const logMessage = `Calculating m[${i}][${j}] with k=${k}: ${m[i][k]} + ${m[k + 1][j]} + ${dimensions[i]}*${dimensions[k + 1]}*${dimensions[j + 1]} = ${cost}`;
+        document.getElementById('calculation-log').innerHTML = logMessage; // Update the log
+        console.log(logMessage); // Optional: log to console
 
         if (cost < m[i][j]) {
             m[i][j] = cost;
