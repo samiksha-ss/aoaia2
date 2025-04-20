@@ -1,32 +1,148 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-#input-section {
+h1 {
+    font-size: 2.5rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
+h2, h3 {
+    font-size: 1.8rem;
+    color: #555;
+    margin-top: 30px;
+    text-decoration: underline;
+}
+
+/* Input section */
+#input-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
 #matrix-dimensions {
-    width: 250px;
+    width: 60%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#matrix-dimensions:focus {
+    border-color: #4CAF50;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #4CAF50;
     color: white;
+    font-size: 1.1rem;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#result, #dp-table {
+button:active {
+    background-color: #388e3c;
+}
+
+/* Result section */
+#output-section {
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#dp-table {
+    margin-top: 30px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
     margin-top: 20px;
-    font-size: 18px;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #555;
+    padding: 10px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #matrix-dimensions {
+        width: 80%;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    #input-section, #output-section {
+        width: 90%;
+    }
+}
+
+/* Highlight current cell */
+td.highlight {
+    background-color: #fff3cd;
+    font-weight: bold;
+    color: #000;
 }
